@@ -50,7 +50,7 @@ app.get("/perfil-then", (req, res) => {
 });
 
 app.get("/saudacao-then", (req, res) => {
-  saudacaoAssincrona("Seu Nome")
+  saudacaoAssincrona("Sophia")
     .then((mensagem) => res.send(mensagem))
     .catch((erro) => res.status(500).json({ erro: erro.message }));
 });
@@ -64,7 +64,7 @@ app.get("/mensagem-invalida-then", (req, res) => {
 // ROTAS - MÓDULO 3 
 app.get("/perfil-async", async (req, res) => {
   try {
-    const dados = await buscarPerfilSimulado("Mariana");
+    const dados = await buscarPerfilSimulado("Alice");
     res.json(dados);
   } catch (erro) {
     res.status(500).json({ erro: "Falha interna no servidor ao buscar perfil." });
